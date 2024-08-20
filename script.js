@@ -1,23 +1,27 @@
 const apiBaseUrl = 'https://api.noroff.dev/api/v1/rainy-days';
 
-
 async function fetchProducts() {
-    const loadingElement = document.getElementById('loading');
-    const productContainer = document.getElementById('product-container');
-    
     try {
-
-        loadingElement.style.display = 'block';
-        productContainer.style.display = 'none';
-        
-
         const response = await fetch(`${apiBaseUrl}/products`);
         const products = await response.json();
-        
 
+        const productContainer = document.getElementById('product-container');
+
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productElement.innerHTML = `
+                <a href="product/index.html?id=${product.id}">
+                    <img src="${product.image}" alt="${product.title}">
+                    <h2>${product.title}</h2>
+                    <p>${product.price} NOK</p>
+                </a>
+            `;
+            productContainer.appendChild(productElement);
+        });
     } catch (error) {
-        console.error('Feil ved henting av produkter:', error);
-        alert('Kunne ikke laste inn produktene. Prøv igjen senere.');
+        console.error('Error fetching products:', error);
+        alert('Kunne ikke laste inn produktene.');
     }
 }
 
