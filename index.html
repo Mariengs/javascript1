@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainy Days Products</title>
+    <title>Rainy Days - Produkter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rainy Days Products</h1>
-    <div id="product-list"></div>
+    <header>
+        <h1>Rainy Days - Produkter</h1>
+    </header>
+    
+    <main>
+        <!-- Lastemelding mens produktene lastes inn -->
+        <div id="loading">Laster inn produkter...</div>
 
-    <script src="index.js"></script>
+        <!-- Container for å vise produktene -->
+        <div id="product-container" class="product-list"></div>
+    </main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
