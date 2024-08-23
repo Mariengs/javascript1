@@ -1,4 +1,4 @@
-const apiBaseUrl = "https://api.noroff.dev/api/v1/rainy-days/products" 
+const apiBaseUrl = "https://docs.noroff.dev/docs/v2/e-commerce/rainy-days" 
 
 async function fetchProducts() {
   const loadingElement = document.getElementById("loading");
@@ -7,7 +7,7 @@ async function fetchProducts() {
   try {
     loadingElement.style.display = "block";
   
-    const response = await fetch(apiBaseUrl);
+    const response = await fetch(apiBaseUrl/rainy-days);
     const products = await response.json();
 
     loadingElement.style.display = "none";
