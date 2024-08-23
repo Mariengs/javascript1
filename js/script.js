@@ -27,11 +27,11 @@ async function fetchProducts() {
 });
 
 if (products.length === 0) {
-  productContainer.innerHTML = '<p>Ingen produkter tilgjengelig.</p>';
+  productContainer.innerHTML = '<p>No products available.</p>';
 }
   } catch (error) {
     console.error("Feil ved henting av produkter:", error);
-    loadingElement.innerText = "Kunne ikke laste inn produktene. Prøv igjen senere.";
+    loadingElement.innerText = "The mf programming this is a stupid cow.. Try again later.";
   }
 }
 document.addEventListener("DOMContentLoaded", fetchProducts);
