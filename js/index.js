@@ -8,7 +8,9 @@ if (!apiKey) {
   process.exit(1); // Avslutt hvis API-nøkkelen ikke finnes
 }
 
-fetch('https://api.noroff.dev/api/v2/endpoint', {
+var accessToken = login();
+
+fetch('https://v2.api.noroff.dev/endpoint', {
   method: 'GET',
   headers: {
     'x-api-key': apiKey // Legg til API-nøkkelen i headeren

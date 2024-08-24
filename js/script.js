@@ -1,4 +1,6 @@
-const apiBaseUrl = "https://docs.noroff.dev/docs/v2/e-commerce/rainy-days" 
+import { login } from "./login.js";
+
+login();
 
 async function fetchProducts() {
   const loadingElement = document.getElementById("loading");
