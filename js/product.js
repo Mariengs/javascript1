@@ -1,23 +1,16 @@
-const apiBaseUrl = "https://docs.noroff.dev/docs/v2/e-commerce/rainy-days";
+const endpoint1 = "rainy-days/b8b528fc-6c60-41f6-a5a9-9a8b27a9482a";
+const url = process.env.BASE_URL + endpoint1;
 
-const item = 
-{
-    "data": {
-      "id": "b8b528fc-6c60-41f6-a5a9-9a8b27a9482a",
-      "title": "Rainy Days Akra Jacket",
-      "description": "The Women's Rainy Days Akra jacket is bound to be your new go-to water-repellent rain jacket.",
-      "gender": "Female",
-      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
-      "baseColor": "Red",
-      "price": 129.99,
-      "discountedPrice": 119.99,
-      "onSale": true,
-      "image": {
-        "url": "https://static.cloud.noroff.dev/api/rainy-days/0-akra-jacket.jpg",
-        "alt": "An orange and grey jacket with a hood"
-      },
-      "tags": ["jacket", "womens"],
-      "favorite": true
-    },
-    "meta": {}
-  }
+fetch(endpoint1)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('There was an error with the fetch operation:', error);
+  });

@@ -1,9 +1,8 @@
 const endpoint = "auth/create-api-key";
 const url = process.env.BASE_URL + endpoint;
 
-const body = {
-    "name": "APIkey",
-}
+  const response = await fetch(`${NOROFF_API_URL}/social/posts`, options)
+  const data = await response.json()
 
 async function generateApiKey() {
     try {
@@ -21,6 +20,7 @@ async function generateApiKey() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Login feilet:', error); // Feilhåndtering
+        console.error('Login feilet:', error);
     }
 }
+

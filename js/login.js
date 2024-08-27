@@ -2,8 +2,8 @@ const endpoint = "auth/login";
 const url = process.env.BASE_URL + endpoint;
 
 const body = {
-    "email": process.env.EMAIL, // Required
-    "password": process.env.PASSWORD, // Required
+    "email": process.env.EMAIL, 
+    "password": process.env.PASSWORD, 
 }
 
 async function login() {
@@ -21,10 +21,11 @@ async function login() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Login feilet:', error); // Feilhåndtering
+        console.error('Login feilet:', error); 
     }
 }
 login().then(data => console.log(data));
+
 
 // Har sendt request til API med await/async
 
