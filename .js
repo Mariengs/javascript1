@@ -1,4 +1,20 @@
-import { login } from "./login.js";
+.then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("There was an error with the fetch operation:", error);
+  });
+
+
+  //product
+
+  import { login } from "./login.js";
 
 login();
 
@@ -38,3 +54,4 @@ async function fetchProducts() {
   }
 }
 document.addEventListener("DOMContentLoaded", fetchProducts);
+// products
