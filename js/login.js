@@ -2,30 +2,31 @@ const endpoint = "auth/login";
 const url = process.env.BASE_URL + endpoint;
 
 const body = {
-    "email": process.env.EMAIL, 
-    "password": process.env.PASSWORD, 
-}
+  email: process.env.EMAIL,
+  password: process.env.PASSWORD,
+};
 
 async function login() {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(body)
-            });
-        if (!response.ok) {
-            throw new Error(`HTTP-feil! Status: ${response.status}, error: ${response.statusText}`);
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Login feilet:', error); 
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    if (!response.ok) {
+      throw new Error(
+        `HTTP-feil! Status: ${response.status}, error: ${response.statusText}`
+      );
     }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Login feilet:", error);
+  }
 }
-login().then(data => console.log(data));
-
+login().then((data) => console.log(data));
 
 // Har sendt request til API med await/async
 
