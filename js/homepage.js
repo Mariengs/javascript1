@@ -9,3 +9,10 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+// function createProducts(products) {
+//   const container = document.querySelector("#products-container");
+// }
+// for (let i = 0; i < products.length; i++) {
+//   const product = products[i];
+// }
