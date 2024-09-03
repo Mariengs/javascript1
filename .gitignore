@@ -1,2 +1,4 @@
 .env
 login.js 
+.js
+node_modules
