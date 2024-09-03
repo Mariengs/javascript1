@@ -2,3 +2,5 @@
 login.js 
 .js
 node_modules/
+js/register.js
+js/constants/generateApiKey.js
