@@ -1,6 +1,6 @@
-import { fetchProducts } from "../api/products/fetchProducts.js";
-import { displayMessage } from "../ui/products/common/displayMessage.js";
-import { createProducts } from "../ui/products/createProducts.js";
+import { fetchProducts } from "../../api/products/fetchProducts.js";
+import { displayMessage } from "../../ui/products/common/displayMessage.js";
+import { createProducts } from "../../ui/products/createProducts.js";
 
 export function displayProducts() {
   document.addEventListener("DOMContentLoaded", async () => {

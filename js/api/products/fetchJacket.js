@@ -5,7 +5,7 @@ export async function fetchJacket() {
 
   if (response.ok) {
     const jacket = await response.json();
-    return jakcet;
+    return jacket;
   }
 
   throw new Error("Failed to fetch products");
