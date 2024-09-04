@@ -5,9 +5,9 @@ import { createProducts } from "../../ui/products/createProducts.js";
 export function displayProducts() {
   document.addEventListener("DOMContentLoaded", async () => {
     try {
-      const prodctsContainer = document.querySelector("#products-container");
+      const productsContainer = document.querySelector("#products-container");
       const products = await fetchProducts();
-      createProducts(prodctsContainer, products);
+      createProducts(productsContainer, products);
     } catch (error) {
       console.error(error);
       displayMessage("#products-container", "error", error.message);
