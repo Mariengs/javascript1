@@ -10,7 +10,7 @@ export function displayProducts() {
       createProducts(productsContainer, products);
     } catch (error) {
       console.error(error);
-      displayMessage("#products-container", "error", error.message);
+      displayMessage("container", "error", error.message);
     }
   });
 }

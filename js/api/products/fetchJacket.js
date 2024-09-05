@@ -8,5 +8,5 @@ export async function fetchJacket() {
     return jacket;
   }
 
-  throw new Error("Failed to fetch products");
+  throw new Error("Failed to fetch product");
 }

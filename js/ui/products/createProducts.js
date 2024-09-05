@@ -1,4 +1,6 @@
 export function createProducts(container, products) {
+  container.innerHTML = "";
+
   for (let i = 0; i < products.data.length; i++) {
     const product = products.data[i];
     const div = document.createElement("div");
@@ -20,14 +22,12 @@ export function createProducts(container, products) {
     const sizes = document.createElement("p");
     sizes.textContent = `Available sizes: ${product.sizes.join(", ")}`;
 
-    // Legg til elementene i produktdiven
     div.append(h2);
-    div.append(img); // Bildet bør vises under tittelen
+    div.append(img);
     div.append(p);
     div.append(gender);
     div.append(sizes);
 
-    // Legg produktdiven til containeren
     container.append(div);
   }
 }
