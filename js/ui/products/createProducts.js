@@ -1,7 +1,4 @@
 export function createProducts(container, products) {
-  console.log(products);
-  console.log(products.data.length);
-
   for (let i = 0; i < products.data.length; i++) {
     const product = products.data[i];
     const div = document.createElement("div");
@@ -13,29 +10,24 @@ export function createProducts(container, products) {
     const p = document.createElement("p");
     p.textContent = product.description;
 
-    if (product.image && product.image.url) {
-      const img = document.createElement("img");
-      img.src = product.image.url;
-      img.alt = product.image.alt || product.title;
-      div.append(img);
-    } else {
-      console.warn(`No image available for product: ${product.title}`);
-    }
+    const img = document.createElement("img");
+    img.src = product.image.url;
+    img.alt = product.image.alt || product.title;
 
-    if (product.gender) {
-      const genderP = document.createElement("p");
-      genderP.textContent = `Gender: ${product.gender}`;
-      div.append(genderP);
-    }
+    const gender = document.createElement("p");
+    gender.textContent = `Gender: ${product.gender}`;
 
-    if (product.sizes && product.sizes.length > 0) {
-      const sizesP = document.createElement("p");
-      sizesP.textContent = `Available sizes: ${product.sizes.join(", ")}`;
-      div.append(sizesP);
-    }
+    const sizes = document.createElement("p");
+    sizes.textContent = `Available sizes: ${product.sizes.join(", ")}`;
 
+    // Legg til elementene i produktdiven
     div.append(h2);
+    div.append(img); // Bildet bør vises under tittelen
     div.append(p);
+    div.append(gender);
+    div.append(sizes);
+
+    // Legg produktdiven til containeren
     container.append(div);
   }
 }
