@@ -16,3 +16,14 @@ body {
     border: 1px brown solid;
   }
 }
+
+a.details {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}

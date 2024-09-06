@@ -3,6 +3,11 @@ export function createProducts(container, products) {
 
   for (let i = 0; i < products.data.length; i++) {
     const product = products.data[i];
+
+    const details = document.createElement("a");
+    details.href = `details.html#${product.id}`;
+    details.classList.add("details");
+
     const div = document.createElement("div");
     div.classList.add("product");
 
@@ -27,7 +32,7 @@ export function createProducts(container, products) {
     div.append(p);
     div.append(gender);
     div.append(sizes);
-
+    container.append(details);
     container.append(div);
   }
 }
