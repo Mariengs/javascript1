@@ -15,3 +15,9 @@ export async function fetchDetails() {
     throw error;
   }
 }
+
+export async function getData() {
+  const data = await fetchDetails();
+}
+
+getData();

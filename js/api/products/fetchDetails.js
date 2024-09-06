@@ -1,3 +1,23 @@
-import { fetchDetails } from "../../details.js";
+import { detailsUrl } from "./constants/api.js";
 
-fetchDetails();
+export async function fetchDetails() {
+  try {
+    const response = await fetch(detailsUrl);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch details");
+    }
+
+    const details = await response.json();
+    return details;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+}
+
+export async function getData() {
+  const data = await fetchDetails();
+}
+
+getData();
