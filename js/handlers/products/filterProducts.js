@@ -1,13 +1,19 @@
-export function filterProducts(products, filter) {
+export function filterProducts(products) {
   const searchInput = document.querySelector("#search");
-  return products.filter((product) => {
-    let matchesFilter = true;
-    if (filter.category) {
-      matchesFilter = matchesFilter && product.tags.includes(filter.category);
-    }
-    if (filter.gender) {
-      matchesFilter = matchesFilter && product.gender === filter.gender;
-    }
-    return matchesFilter;
-  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", handleFilter);
+  }
+
+  function handleFilter(event) {
+    const filterValue = event.target.value.trim().toLowerCase();
+
+    const filterProducts = products.filter((product) => {
+      if (product.title.toLowerCase().startsWith(filterValue)) {
+        return true;
+      }
+    });
+
+    console.log(filterProducts);
+  }
 }
