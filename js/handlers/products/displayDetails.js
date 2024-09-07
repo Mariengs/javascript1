@@ -1,12 +1,10 @@
 import { fetchDetailsById } from "../../api/products/fetchDetailsById.js";
 import { displayMessage } from "../../ui/products/common/displayMessage.js";
+import { createDetails } from "../../ui/products/createDetails.js";
+import { getQueryParam } from "../../helpers/getQueryParam.js";
 
 export async function displayDetails() {
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const id = params.get("id");
-
-  console.log("id", id);
+  const id = getQueryParam("id");
 
   if (!id) {
     window.location.href = "/";
@@ -14,11 +12,9 @@ export async function displayDetails() {
   const container = document.querySelector("#details-container");
   try {
     const details = await fetchDetailsById(id);
+    createDetails(container, details);
   } catch (error) {
     console.error(error);
     displayMessage(container, "error", error.message);
   }
 }
-// if id - fetch by id
-//create HTML for the details
-//wrap in try/catch

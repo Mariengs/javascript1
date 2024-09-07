@@ -14,6 +14,9 @@ export function createProducts(container, products) {
     const p = document.createElement("p");
     p.textContent = product.description;
 
+    const price = document.createElement("p");
+    price.textContent = `Price: ${product.price}kr`;
+
     const img = document.createElement("img");
     img.src = product.image.url;
     img.alt = product.image.alt || product.title;
@@ -29,6 +32,7 @@ export function createProducts(container, products) {
     productLink.append(p);
     productLink.append(gender);
     productLink.append(sizes);
+    productLink.append(price);
     container.append(productLink);
   }
 }
