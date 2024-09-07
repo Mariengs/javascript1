@@ -1,7 +1,7 @@
 export function createDetails(container, details) {
   container.innerHTML = "";
 
-  const { title, description, product, gender, sizes, image, price } = details;
+  const { title, description, gender, sizes, image, price } = details;
 
   const productLink = document.createElement("div");
   productLink.classList.add("product-details");
@@ -13,17 +13,17 @@ export function createDetails(container, details) {
   p.textContent = description;
 
   const priceElement = document.createElement("p");
-  price.textContent = `Price: ${product.price}kr`;
+  price.textContent = `Price: ${price}kr`;
 
   const imgElement = document.createElement("img");
-  img.src = product.image.url;
-  img.alt = product.image.alt || product.title;
+  img.src = image.url;
+  img.alt = image.alt || title;
 
   const genderElement = document.createElement("p");
-  gender.textContent = `Gender: ${product.gender}`;
+  gender.textContent = `Gender: ${gender}`;
 
   const sizesElement = document.createElement("p");
-  sizes.textContent = `Available sizes: ${product.sizes.join(", ")}`;
+  sizes.textContent = `Available sizes: ${sizes.join(", ")}`;
 
   productLink.append(h2);
   productLink.append(img);

@@ -5,14 +5,16 @@ import { getQueryParam } from "../../helpers/getQueryParam.js";
 
 export async function displayDetails() {
   const id = getQueryParam("id");
+  document.addEventListener("DOMContentLoaded", async () => {});
 
   if (!id) {
     window.location.href = "/";
   }
-  const container = document.querySelector("#details-container");
+
   try {
+    const detailsContainer = document.querySelector("#details-container");
     const details = await fetchDetailsById(id);
-    createDetails(container, details);
+    createDetails(detailsContainer, details);
   } catch (error) {
     console.error(error);
     displayMessage(container, "error", error.message);
