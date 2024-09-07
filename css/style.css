@@ -7,6 +7,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .message {
   text-align: center;
   margin: 10px;

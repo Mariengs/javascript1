@@ -13,17 +13,16 @@ export function createDetails(container, details) {
   p.textContent = description;
 
   const priceElement = document.createElement("p");
-  price.textContent = `Price: ${price}kr`;
+  priceElement.textContent = `Price: ${price}kr`;
 
-  const imgElement = document.createElement("img");
+  const img = document.createElement("img");
   img.src = image.url;
-  img.alt = image.alt || title;
 
   const genderElement = document.createElement("p");
-  gender.textContent = `Gender: ${gender}`;
+  genderElement.textContent = `Gender: ${gender}`;
 
   const sizesElement = document.createElement("p");
-  sizes.textContent = `Available sizes: ${sizes.join(", ")}`;
+  sizesElement.textContent = `Available sizes: ${sizes.join(", ")}`;
 
   productLink.append(h2);
   productLink.append(img);
