@@ -4,12 +4,9 @@ export function createProducts(container, products) {
   for (let i = 0; i < products.data.length; i++) {
     const product = products.data[i];
 
-    const details = document.createElement("a");
-    details.href = `details.html#${product.id}`;
-    details.classList.add("details");
-
-    const div = document.createElement("div");
-    div.classList.add("product");
+    const productLink = document.createElement("a");
+    productLink.href = `details/?id=${product.id}`;
+    productLink.classList.add("product-link");
 
     const h2 = document.createElement("h2");
     h2.textContent = product.title;
@@ -27,12 +24,11 @@ export function createProducts(container, products) {
     const sizes = document.createElement("p");
     sizes.textContent = `Available sizes: ${product.sizes.join(", ")}`;
 
-    div.append(h2);
-    div.append(img);
-    div.append(p);
-    div.append(gender);
-    div.append(sizes);
-    container.append(details);
-    container.append(div);
+    productLink.append(h2);
+    productLink.append(img);
+    productLink.append(p);
+    productLink.append(gender);
+    productLink.append(sizes);
+    container.append(productLink);
   }
 }
