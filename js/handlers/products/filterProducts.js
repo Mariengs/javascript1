@@ -13,7 +13,5 @@ export function filterProducts(products) {
         return true;
       }
     });
-
-    console.log(filterProducts);
   }
 }

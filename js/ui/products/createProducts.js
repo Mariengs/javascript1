@@ -1,6 +1,16 @@
 export function createProducts(container, products) {
-  container.innerHTML = "";
+  let parent = container;
 
+  if (typeof container === "string") {
+    parent = document.querySelector(container);
+  }
+
+  if (products.data.length === 0) {
+    parent.innerHTML = "<p>No products found</p>";
+    return;
+  }
+
+  parent.innerHTML = "";
   for (let i = 0; i < products.data.length; i++) {
     const product = products.data[i];
 
