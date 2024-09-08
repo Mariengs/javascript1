@@ -37,12 +37,17 @@ export function createProducts(container, products) {
     const sizes = document.createElement("p");
     sizes.textContent = `Available sizes: ${product.sizes.join(", ")}`;
 
+    const cartIcon = document.createElement("i");
+    cartIcon.classList.add("fa-solid", "fa-cart-plus");
+    cartIcon.id = "cart-icon";
+
     productLink.append(h2);
     productLink.append(img);
     productLink.append(p);
     productLink.append(gender);
     productLink.append(sizes);
     productLink.append(price);
+    productLink.append(cartIcon);
     container.append(productLink);
   }
 }

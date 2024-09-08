@@ -15,20 +15,26 @@ export function createDetails(container, details) {
   const priceElement = document.createElement("p");
   priceElement.textContent = `Price: ${price}kr`;
 
-  const img = document.createElement("img");
-  img.src = image.url;
-
   const genderElement = document.createElement("p");
   genderElement.textContent = `Gender: ${gender}`;
 
-  const sizesElement = document.createElement("p");
-  sizesElement.textContent = `Available sizes: ${sizes.join(", ")}`;
+  // const img = document.createElement("img");
+  // img.src = product.image.url;
+  // img.alt = product.image.alt || product.title;
+
+  const sizeElement = document.createElement("p");
+  sizeElement.textContent = `Sizes: ${sizes}`;
+
+  const cartIcon = document.createElement("i");
+  cartIcon.classList.add("fa-solid", "fa-cart-plus");
+  cartIcon.id = "cart-icon";
 
   productLink.append(h2);
-  productLink.append(img);
   productLink.append(p);
+  // productLink.append(img);
+  productLink.append(sizeElement);
   productLink.append(genderElement);
-  productLink.append(sizesElement);
   productLink.append(priceElement);
+  productLink.append(cartIcon);
   container.append(productLink);
 }
