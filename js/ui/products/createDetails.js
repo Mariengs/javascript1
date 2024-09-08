@@ -1,3 +1,5 @@
+import { isIdInCart } from "./cart.js";
+
 export function createDetails(container, details) {
   container.innerHTML = "";
 
@@ -26,11 +28,17 @@ export function createDetails(container, details) {
   sizeElement.textContent = `Sizes: ${sizes}`;
 
   const cartIcon = document.createElement("i");
-  cartIcon.classList.add("fa-solid", "fa-cart-plus");
+  cartIcon.classList.add("fa-solid");
   cartIcon.id = "cart-icon";
   cartIcon.dataset.id = details.id;
   cartIcon.dataset.title = title;
   cartIcon.dataset.price = price;
+
+  if (isIdInCart(id)) {
+    cartIcon.classList.add("fa-cart-shopping", "green");
+  } else {
+    cartIcon.classList.add("fa-cart-plus");
+  }
 
   productLink.append(h2);
   productLink.append(p);

@@ -4,7 +4,7 @@ function saveToCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-function getCart() {
+export function getCart() {
   return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
@@ -23,6 +23,6 @@ export function addToCart(id) {
 
 export function removeFromCart(id) {
   const cart = getCart();
-  const newCart = cart.filter((item) => item.id !== id);
+  const newCart = cart.filter((item) => String(item.id) === String(id));
   saveToCart(newCart);
 }
