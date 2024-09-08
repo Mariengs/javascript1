@@ -20,3 +20,9 @@ export function addToCart(id) {
   cart.push(newItem);
   saveToCart(cart);
 }
+
+export function removeFromCart(id) {
+  const cart = getCart();
+  const newCart = cart.filter((item) => item.id !== id);
+  saveToCart(newCart);
+}

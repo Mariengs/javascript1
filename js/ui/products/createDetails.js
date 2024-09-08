@@ -1,7 +1,7 @@
 export function createDetails(container, details) {
   container.innerHTML = "";
 
-  const { title, description, gender, sizes, image, price } = details;
+  const { id, title, description, gender, sizes, image, price } = details;
 
   const productLink = document.createElement("div");
   productLink.classList.add("product-details");
@@ -28,6 +28,9 @@ export function createDetails(container, details) {
   const cartIcon = document.createElement("i");
   cartIcon.classList.add("fa-solid", "fa-cart-plus");
   cartIcon.id = "cart-icon";
+  cartIcon.dataset.id = details.id;
+  cartIcon.dataset.title = title;
+  cartIcon.dataset.price = price;
 
   productLink.append(h2);
   productLink.append(p);

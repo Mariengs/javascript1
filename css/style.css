@@ -37,4 +37,12 @@ a.product-link {
 i {
   font-size: 2rem;
   padding: 10px;
+
+  &.green {
+    color: green;
+  }
+
+  &:hover {
+    color: gray;
+  }
 }
