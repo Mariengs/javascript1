@@ -21,8 +21,8 @@ export function createDetails(container, details) {
   genderElement.textContent = `Gender: ${gender}`;
 
   const img = document.createElement("img");
-  img.src = product.image.url;
-  img.alt = product.image.alt || product.title;
+  img.src = image.url;
+  img.alt = image.alt;
 
   const sizeElement = document.createElement("p");
   sizeElement.textContent = `Sizes: ${sizes}`;
