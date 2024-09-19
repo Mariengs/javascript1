@@ -3,7 +3,7 @@ import { isIdInCart } from "./cart.js";
 export function createDetails(container, details) {
   container.innerHTML = "";
 
-  const { id, title, description, gender, sizes, image, price } = details;
+  const { id, title, description, gender, sizes, image, price } = details.data;
 
   const productLink = document.createElement("div");
   productLink.classList.add("product-details");
@@ -20,9 +20,9 @@ export function createDetails(container, details) {
   const genderElement = document.createElement("p");
   genderElement.textContent = `Gender: ${gender}`;
 
-  // const img = document.createElement("img");
-  // img.src = product.image.url;
-  // img.alt = product.image.alt || product.title;
+  const img = document.createElement("img");
+  img.src = product.image.url;
+  img.alt = product.image.alt || product.title;
 
   const sizeElement = document.createElement("p");
   sizeElement.textContent = `Sizes: ${sizes}`;
@@ -42,7 +42,7 @@ export function createDetails(container, details) {
 
   productLink.append(h2);
   productLink.append(p);
-  // productLink.append(img);
+  productLink.append(img);
   productLink.append(sizeElement);
   productLink.append(genderElement);
   productLink.append(priceElement);
